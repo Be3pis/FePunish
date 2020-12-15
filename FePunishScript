@@ -1,0 +1,17 @@
+oldpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+nothingimportant = game.Players[target]
+local tool = game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool")
+game.Players.LocalPlayer.Character.Humanoid:Destroy()
+Instance.new("Humanoid", game.Players.LocalPlayer.Character)
+tool.Parent = game.Players.LocalPlayer.Character
+repeat
+nothingimportant.Character.HumanoidRootPart.CFrame = tool.Handle.CFrame
+wait()
+until tool.Parent == game.Players[target].Character
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(1, 1000000000000, 1))
+wait(.2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldpos
+wait(.3)
+game.Players.LocalPlayer.Character.Humanoid:Destroy()
+wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(1, 1000000000000, 1))
